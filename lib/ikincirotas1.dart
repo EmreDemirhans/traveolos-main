@@ -60,7 +60,7 @@ class _ikincirotas1State extends State<ikincirotas1> {
       appBar: AppBar(
         title: Text(
             'Mesafe: ${(0.001 * (_distance).toInt()).toStringAsFixed(2)} km'),
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
       ),
       body: GoogleMap(
         mapType: MapType.normal,
@@ -89,7 +89,7 @@ class _ikincirotas1State extends State<ikincirotas1> {
   _getPolyLine() async {
     PolylinePoints polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      'AIzaSyAxh2_ryguz9TlfFE-AIAu0aYy1hQ4SyQs',
+      'AIzaSyBF1Ph5iOb2U1-BlSNxqzHpiexWBgrEt48',
       PointLatLng(widget.mekanlarSet.elementAt(1).position.latitude,
           widget.mekanlarSet.elementAt(1).position.longitude),
       PointLatLng(MapScreen.bitisMarker.position.latitude,

@@ -29,6 +29,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  final _firestore = FirebaseFirestore.instance;
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
 
   Map<PolylineId, Polyline> polylines = {};
@@ -38,8 +39,15 @@ class _MapScreenState extends State<MapScreen> {
   @override
   void initState() {
     //addCustomIcon();
-    mekanlarGet();
+    getEvents();
     super.initState();
+  }
+
+  getEvents() async {
+    CollectionReference eventsRef = _firestore.collection('data');
+
+    var sonuc = await eventsRef.get();
+    print('');
   }
 
   mekanlarGet() async {
@@ -107,12 +115,12 @@ class _MapScreenState extends State<MapScreen> {
       appBar: AppBar(
         title: Text(
             'Mesafe: ${(0.001 * (_distance).toInt()).toStringAsFixed(2)} km'),
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
       ),
       body: GoogleMap(
         mapType: MapType.normal,
         initialCameraPosition: CameraPosition(
-          target: LatLng(37.456603, 30.590059),
+          target: LatLng(39.925533, 32.866287),
           zoom: 14,
         ),
         markers: mekanlarSet,
@@ -161,14 +169,14 @@ class _MapScreenState extends State<MapScreen> {
         polylines: Set<Polyline>.of(polylines.values),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
         onPressed: () {
           showModalBottomSheet(
             context: context,
             builder: (context) {
               return Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                color: Color(0xFF673AB7),
+                color: Color(0xFF2196F3),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -186,8 +194,7 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                         child: Text(
                           '${mekanlarSet.elementAt(1).markerId.value.toString()}',
-                          style:
-                              TextStyle(color: Colors.deepPurple, fontSize: 18),
+                          style: TextStyle(color: Colors.blue, fontSize: 18),
                         ),
                         onPressed: () async {
                           _polyline.add(Polyline(
@@ -200,7 +207,7 @@ class _MapScreenState extends State<MapScreen> {
                               LatLng(MapScreen.bitisMarker.position.latitude,
                                   MapScreen.bitisMarker.position.longitude)
                             ],
-                            color: Color(0xFF673AB7),
+                            color: Color(0xFF2196F3),
                           ));
                           print(mekanlarSet);
 
@@ -224,8 +231,7 @@ class _MapScreenState extends State<MapScreen> {
                         ),
                         child: Text(
                           '${mekanlarSet.elementAt(2).markerId.value.toString()}',
-                          style:
-                              TextStyle(color: Colors.deepPurple, fontSize: 18),
+                          style: TextStyle(color: Colors.blue, fontSize: 18),
                         ),
                         onPressed: () async {
                           _polyline.add(Polyline(
@@ -238,7 +244,7 @@ class _MapScreenState extends State<MapScreen> {
                               LatLng(MapScreen.bitisMarker.position.latitude,
                                   MapScreen.bitisMarker.position.longitude)
                             ],
-                            color: Color(0xFF673AB7),
+                            color: Color(0xFF2196F3),
                           ));
                           print(mekanlarSet);
 
@@ -279,8 +285,7 @@ class _MapScreenState extends State<MapScreen> {
                         },
                         child: Text(
                           "Rotayı kaydet",
-                          style:
-                              TextStyle(color: Colors.deepPurple, fontSize: 18),
+                          style: TextStyle(color: Colors.blue, fontSize: 18),
                         ),
                       ),
                     ],

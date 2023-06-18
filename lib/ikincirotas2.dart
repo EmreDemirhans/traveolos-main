@@ -60,7 +60,7 @@ class _ikincirotas2State extends State<ikincirotas2> {
       appBar: AppBar(
         title: Text(
             'Mesafe: ${(0.001 * (_distance).toInt()).toStringAsFixed(2)} km'),
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
       ),
       body: GoogleMap(
         mapType: MapType.normal,

@@ -2,8 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gmap/auth_service.dart';
 import 'package:gmap/custom_text_button.dart';
-
-import 'kayitlirota.dart';
+import 'package:gmap/simple_map.dart';
 
 class login_page extends StatefulWidget {
   const login_page({Key? key}) : super(key: key);
@@ -26,13 +25,18 @@ class _login_pageState extends State<login_page> {
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: height * .25,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.none,
-                    image: AssetImage("assets/travelos.png"),
+              Center(
+                child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 100),
+                    child: Icon(
+                      Icons.downhill_skiing,
+                      shadows: [],
+                      size: 150,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -85,7 +89,7 @@ class _login_pageState extends State<login_page> {
                 email: email, password: sifre);
             print(kullanici.user!.email);
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => rotalar()));
+                context, MaterialPageRoute(builder: (context) => MapScreen()));
           } catch (e) {
             print(e.toString());
           }
@@ -93,7 +97,7 @@ class _login_pageState extends State<login_page> {
       },
       child: Text(
         "Giriş Yap",
-        style: TextStyle(color: Colors.white, fontSize: 17),
+        style: TextStyle(color: Colors.white, fontSize: 22),
       ),
     );
   }
@@ -101,9 +105,11 @@ class _login_pageState extends State<login_page> {
   TextButton kayit_ol() {
     return TextButton(
       onPressed: () => Navigator.pushNamed(context, "/signUp"),
-      child: Text(
-        "Kayıt Ol",
-        style: TextStyle(color: Colors.redAccent, fontSize: 17),
+      child: SizedBox(
+        child: Text(
+          "Kayıt Ol",
+          style: TextStyle(color: Colors.white, fontSize: 18),
+        ),
       ),
     );
   }
@@ -113,7 +119,8 @@ class _login_pageState extends State<login_page> {
       "TRAVEL \nOS",
       textAlign: TextAlign.center,
       style: TextStyle(
-        fontSize: 40,
+        fontFamily: 'Satisfy',
+        fontSize: 50,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
@@ -130,7 +137,7 @@ class _login_pageState extends State<login_page> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.white),
       decoration: input_dekor("E-mail"),
     );
   }
@@ -145,25 +152,25 @@ class _login_pageState extends State<login_page> {
       onSaved: (value) {
         sifre = value!;
       },
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.white),
       decoration: input_dekor("Şifre"),
       obscureText: true,
     );
   }
 
   Widget input_bosluk() => SizedBox(
-        height: 26,
+        height: 15,
       );
 
   InputDecoration input_dekor(String hintText) {
     return InputDecoration(
       hintText: hintText,
       enabledBorder: UnderlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+        borderSide: BorderSide(color: Colors.white),
       ),
       focusedBorder: UnderlineInputBorder(
         borderSide: BorderSide(
-          color: Colors.grey,
+          color: Colors.white,
         ),
       ),
     );

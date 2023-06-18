@@ -10,9 +10,9 @@ class Mekan {
   List bkPuanlar = [];
 
   getMekan() async {
-    CollectionReference mekanlarRef = _firestore.collection('mekanlar');
+    CollectionReference eventsRef = _firestore.collection('data');
 
-    var sonuc = await mekanlarRef.get();
+    var sonuc = await eventsRef.get();
     sonuc.docs.forEach((element) {
       mekanList.add(MekanModel.fromJson(element.data()));
     });

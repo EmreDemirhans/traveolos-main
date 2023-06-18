@@ -18,29 +18,31 @@ class _signUpState extends State<signUp> {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xff4cc1f8),
-      body: SingleChildScrollView(
-        child: Form(
-          key: formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    baslikText(),
-                    input_bosluk(),
-                    emailTextField(),
-                    input_bosluk(),
-                    sifreTextField(),
-                    input_bosluk(),
-                    kayit_ol(),
-                    geri_don(),
-                  ],
-                ),
-              )
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      baslikText(),
+                      input_bosluk(),
+                      emailTextField(),
+                      input_bosluk(),
+                      sifreTextField(),
+                      input_bosluk(),
+                      kayit_ol(),
+                      geri_don(),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -53,7 +55,10 @@ class _signUpState extends State<signUp> {
         onPressed: kayitOl,
         child: Text(
           "Kayıt Ol",
-          style: TextStyle(color: Colors.indigoAccent, fontSize: 17),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 21,
+          ),
         ),
       ),
     );
@@ -85,15 +90,24 @@ class _signUpState extends State<signUp> {
       onPressed: () => Navigator.pushNamed(context, "/loginPage"),
       child: Text(
         "Geri Dön",
-        style: TextStyle(color: Colors.indigoAccent, fontSize: 17),
+        style: TextStyle(color: Colors.white, fontSize: 20),
       ),
     );
   }
 
-  Text baslikText() {
-    return Text(
-      "Kayıt Ol   ",
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+  Padding baslikText() {
+    return Padding(
+      padding: const EdgeInsets.all(19.0),
+      child: Text(
+        "Kayıt ol ",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 100,
+          fontFamily: 'Satisfy',
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 
@@ -107,7 +121,7 @@ class _signUpState extends State<signUp> {
       onSaved: (value) {
         email = value!;
       },
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.white),
       decoration: input_dekor("E-mail"),
     );
   }
@@ -122,7 +136,7 @@ class _signUpState extends State<signUp> {
       onSaved: (value) {
         sifre = value!;
       },
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.white),
       decoration: input_dekor("Şifre"),
       obscureText: true,
     );

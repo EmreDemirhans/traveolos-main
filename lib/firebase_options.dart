@@ -25,9 +25,12 @@ class DefaultFirebaseOptions {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
-      case TargetPlatform.iOS:
-        return ios;
       case TargetPlatform.macOS:
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
+      case TargetPlatform.iOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
           'you can reconfigure this by running the FlutterFire CLI again.',
@@ -50,20 +53,10 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDjmZRgwQ762MEN-B4d5oquDYtF4lq7n9c',
-    appId: '1:357739001581:android:82e7b1ba4cbcb917dafee4',
-    messagingSenderId: '357739001581',
-    projectId: 'guglemebwitflutderr',
-    storageBucket: 'guglemebwitflutderr.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAlcw_EyJ5rgw25ooWXWPVBOoeCyt5J2ug',
-    appId: '1:357739001581:ios:b7b91d56bdc25141dafee4',
-    messagingSenderId: '357739001581',
-    projectId: 'guglemebwitflutderr',
-    storageBucket: 'guglemebwitflutderr.appspot.com',
-    iosClientId: '357739001581-qqttqc0skqj5jqq9vgr6g19fbp831kaa.apps.googleusercontent.com',
-    iosBundleId: 'com.example.gmap',
+    apiKey: 'AIzaSyCqVJTF3-LmFggfYD5lNJkagLmXH9E-Msk',
+    appId: '1:709611579480:android:41935d56215cf5a346c22d',
+    messagingSenderId: '709611579480',
+    projectId: 'travelos-999a5',
+    storageBucket: 'travelos-999a5.appspot.com',
   );
 }

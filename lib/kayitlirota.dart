@@ -19,7 +19,7 @@ class _rotalarState extends State<rotalar> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
         title: Text('Kayıtlı Rotalar'),
       ),
       body: Center(
@@ -86,7 +86,7 @@ class _rotalarState extends State<rotalar> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFF673AB7),
+        backgroundColor: Color(0xFF2196F3),
         onPressed: () async {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => MapScreen()));

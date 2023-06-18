@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "357739001581",
-    "project_id": "guglemebwitflutderr",
-    "storage_bucket": "guglemebwitflutderr.appspot.com"
+    "project_number": "709611579480",
+    "firebase_url": "https://travelos-999a5-default-rtdb.firebaseio.com",
+    "project_id": "travelos-999a5",
+    "storage_bucket": "travelos-999a5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:357739001581:android:82e7b1ba4cbcb917dafee4",
+        "mobilesdk_app_id": "1:709611579480:android:41935d56215cf5a346c22d",
         "android_client_info": {
-          "package_name": "com.example.gmap"
+          "package_name": "com.example.travelos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "357739001581-850lctifovl4tj90mqe6gmn411ud472o.apps.googleusercontent.com",
+          "client_id": "709611579480-lcq7dlpeln52o3t9bsvir01ea4922nb6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDjmZRgwQ762MEN-B4d5oquDYtF4lq7n9c"
+          "current_key": "AIzaSyCqVJTF3-LmFggfYD5lNJkagLmXH9E-Msk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "357739001581-850lctifovl4tj90mqe6gmn411ud472o.apps.googleusercontent.com",
+              "client_id": "709611579480-lcq7dlpeln52o3t9bsvir01ea4922nb6.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
